@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>Online Cafe</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kumar+One+Outline|Muli&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>ONLINE CAFE</h1>
+
+    
+    <audio id="ticking" src="ticking.mp3" preload loop></audio>
+    <audio id="alarm" src="alarm.mp3" preload></audio>
+      
+    <div class="container">
+      
+      <div class = "input-container"> 
+        <h3>Order up!</h3>
+        <select>
+          <option>Milk tea</option>
+          <option>Egg Waffles </option>
+          <option>Smoothie</option>
+          <option>Cake</option>
+        </select>  
+        <input type = "number" placeholder = "Quantity" id = "quantity">
+        <button>Place order!</button>
+      </div>
+      
+      <div class = "timer-container">
+        
+      </div> 
+      
+      <div class = "list-container">
+        <h3>Your orders! </h3>
+      </div> 
+      
+    </div>
+
+    
+    <script>
+      var order, orderTime; 
+      var seconds, timeout; 
+      var remaining, minuteInterval; 
+      var orderTime; 
+      var amount 
+      var secondInterval, timeSpend; 
+      
+      function start() {
+        $('#ticking')[0].play();
+        amount = $("#quantity").val(); 
+        order = $("select").val(); 
+        if (order = "Milk tea") {
+          orderTime = 4*amount; 
+        } 
+        else if (order = "Egg waffles") {
+          orderTime = 3*amount; 
+        }
+        else if (order = "Smoothie") {
+          orderTime = 4*amount;    
+        }
+        else if (order = "Cake") {
+          orderTime = 2*amount;    
+        }
+        var startHtml = `<img id = "driver" src = "driving.gif">
+                  <h3>${order}</h3>
+                  <p id = 'status'> Your order will be ready in ${orderTime} minutes</p>
+                  <div class = "progress"></div>`;
+        $('.timer-container').html(startHtml); 
+        $('.timer-container').css("background-color", "#0984e3"); 
+        seconds = orderTime*60; 
+        var ms = seconds * 1000; 
+        clearTimeout(timeout); 
+        timeout = setTimeout(end, ms); 
+        clearInterval(minuteInterval); 
+        clearInterval(secondInterval); 
+        remaining = orderTime; 
+        minuteInterval = setInterval(update, 60000); 
+        secondInterval = setInterval(tick, 1000); 
+      }
+      
+      function end() {
+        clearTimeout(timeout); 
+        clearInterval(minuteInterval); 
+        clearInterval(secondInterval); 
+        $('.timer-container').css("background-color", "#00b894"); 
+        $('.timer-container').html(`<img src = "alarm.gif">`); 
+        $("#ticking")[0].pause(); 
+        $("#alarm")[0].play(); 
+        var listHtml = `<p class = "items">${order}: ${amount}</p>`; 
+        $('.list-container').append(listHtml); 
+      }
+      
+      function update() {
+        remaining = remaining - 1; 
+        $('timer-container').css("background-color", "#00b894"); 
+        $("#status").text(`Your order will be ready in ${remaining} minutes`); 
+      }
+      
+      function tick() {
+        timeSpend = timeSpend + 1; 
+        var percentage = (timeSpend/seconds)*100; 
+        $('.progress').css('width', percentage + '%'); 
+      }
+      
+      $('button').click(start); 
+
+
+    
+    </script>
+    
+  </body>
+</html>
