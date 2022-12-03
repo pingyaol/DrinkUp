@@ -3,7 +3,7 @@
   }
   
   body {
-    background-image: url('cafe.jpg');
+    background-image: url('water.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     padding: 40px;
@@ -15,7 +15,7 @@
     font-weight: normal;
     font-size: 48px;
     color: white;
-    text-shadow: 1px 1px 5px #FF0000;
+    text-shadow: 1px 1px 5px #df5200;
   }
   
   h3 {
@@ -25,6 +25,13 @@
     font-weight: normal;
   }
   
+  p {
+    text-align: center;
+    color: black;
+    font-family: 'Muli', sans-serif;
+    font-weight: normal;
+  }
+
   img {
     width: 100%;
   }
@@ -59,6 +66,11 @@
   .timer-container > h3 {
     position: relative;
     z-index: 10;
+  }
+
+  .completed-container {
+    position: relative;
+    overflow: hidden;
   }
   
   .progress {
@@ -105,11 +117,12 @@
     justify-content: space-around;
   }
   
-  .input-container, .timer-container, .list-container {
+  .input-container, .timer-container, .list-container, .completed-container {
     background: #636e72;
     height: 280px;
     width: 280px;
     border-radius: 10px;
+    margin: 10px; 
   }
   
   form {
@@ -129,4 +142,42 @@
   padding: 5px;
   z-index: 2;
   position: relative;
+}
+
+.heading {
+  position: relative; 
+  left: 1000px; 
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  overflow: hidden;
+  display: inline-block; 
+  background-color: #c2fcff;
+  position: absolute; 
+  left: 50px; 
+  font-family: 'Muli', sans-serif;
+  border-radius: 7px; 
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #c2fcff;
+  color: rgb(64, 105, 241);
 }
