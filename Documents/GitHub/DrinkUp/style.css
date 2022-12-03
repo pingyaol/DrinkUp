@@ -1,0 +1,183 @@
+*{
+    transition: 1s all ease;
+  }
+  
+  body {
+    background-image: url('water.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 40px;
+    background-position: center;
+  }
+  
+  h1 {
+    font-family: 'Kumar One Outline', cursive;
+    font-weight: normal;
+    font-size: 48px;
+    color: white;
+    text-shadow: 1px 1px 5px #df5200;
+  }
+  
+  h3 {
+    text-align: center;
+    color: white;
+    font-family: 'Muli', sans-serif;
+    font-weight: normal;
+  }
+  
+  p {
+    text-align: center;
+    color: black;
+    font-family: 'Muli', sans-serif;
+    font-weight: normal;
+  }
+
+  img {
+    width: 100%;
+  }
+  
+  select, input, button {
+    display: block;
+    margin: auto;
+    width: 80%;
+    border: 1px solid black;
+    padding: 10px;
+    font-family: 'Muli', sans-serif;
+    margin-bottom: 10px;
+    outline: none;
+  }
+  
+  
+  button {
+    cursor: pointer;
+    background-color: #2d3436;
+    color: white;
+  }
+  
+  .timer-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .timer-container > img {
+    position: relative;
+  }
+  
+  .timer-container > h3 {
+    position: relative;
+    z-index: 10;
+  }
+
+  .completed-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .progress {
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #00b894;
+    transition: 1s all ease;
+    z-index: 0;
+  }
+  
+  #status {
+    font-family: 'Muli', sans-serif;
+    color: white;
+    text-align: center;
+    margin-top: 0px; 
+    padding-top: 0px;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .item {
+    text-align: center;
+    color: white;
+    background-color: #2d3436;
+    padding: 5px;
+    font-family: 'Muli', sans-serif;
+  }
+  
+  .list-container {
+    overflow-y: auto;
+  }
+  
+  .container {
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+  
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .input-container, .timer-container, .list-container, .completed-container {
+    background: #636e72;
+    height: 280px;
+    width: 280px;
+    border-radius: 10px;
+    margin: 10px; 
+  }
+  
+  form {
+    padding: 20px;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px rgba(255,0,0,0.5);
+    width: 300px;
+  }
+  
+#order-age {
+  font-family: 'Muli', sans-serif;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  margin: 0px; 
+  padding: 5px;
+  z-index: 2;
+  position: relative;
+}
+
+.heading {
+  position: relative; 
+  left: 1000px; 
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  overflow: hidden;
+  display: inline-block; 
+  background-color: #c2fcff;
+  position: absolute; 
+  left: 50px; 
+  font-family: 'Muli', sans-serif;
+  border-radius: 7px; 
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #c2fcff;
+  color: rgb(64, 105, 241);
+}
